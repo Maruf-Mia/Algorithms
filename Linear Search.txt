@@ -1,0 +1,46 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+int linearSearch(int arr[], int n, int e){
+    for(int i=0; i<n;i++){
+        if(arr[i]==e){
+            return i;
+        }
+    }
+    
+    return -1;
+}
+
+int main()
+{
+    int n;
+    cout<<"Enter the array size"<<endl;
+    cin>>n;
+    int arr[n];
+    cout<<"Enter array elements:"<<endl;
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    cout<<"Which element do you want to search: "<<endl;
+    int e;
+    cin>>e;
+    
+    int l=linearSearch(arr, n, e);
+    if(l==-1){
+        cout<<"The value is not found in the array."<<endl;
+    }
+    else{
+        cout<<"The value is found at the location: "<<l<<endl;
+    }
+
+    return 0;
+}
